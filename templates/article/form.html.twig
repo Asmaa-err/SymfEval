@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="row">
+		<div class="col">
+			<h1>Gestion des articles</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			
+			{{ form_start(form, { attr: { novalidate: 'novalidate' } } ) }}
+				<p>
+					
+					{{ form_label(form.titre, 'titre:') }}
+					{{ form_widget(form.titre) }}
+				</p>
+
+                <p>
+					
+					{{ form_label(form.conti, 'Continent:') }}
+					{{ form_widget(form.conti) }}
+				</p>
+
+				<p>
+					{{ form_label(form.description, 'Description:') }}
+					{{ form_widget(form.description) }}
+				</p>
+			
+				<p>
+					{{ form_label(form.image, 'Image:') }}
+					{{ form_widget(form.image) }}
+				</p>
+				
+				<p>
+					<input type="submit" class="btn btn-info" value="Valider">
+				</p>
+			{{ form_end(form) }}
+		</div>
+	</div>
+{% endblock %}

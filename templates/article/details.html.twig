@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-sm-3">
+			<img src="{{ asset('img/' ~ result.image) }}" class="img-fluid" alt="">
+		</div>
+		<div class="col-sm-9">
+			<h3>{{ result.titre }}</h3>
+            <p class="h6"><span class="font-weight-bold">Continent :</span> {{ result.conti.name }}</p>
+            <hr>
+			<p>{{ result.description }}</p>
+			<hr>
+            {% include '_inc/flash.messages.html.twig' %}
+            <a href="{{ url('article.form.update', { id: result.id }) }}" class="btn btn-warning">Modifier</a>
+            <a href="{{ url('article.delete', { id: result.id }) }}" class="btn btn-danger">Supprimer</a>
+			
+			
+		</div>
+        
+	</div>
+{% endblock %}

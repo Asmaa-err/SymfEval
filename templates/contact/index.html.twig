@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{%  block body %}
+	<div class="row">
+		<div class="col">
+			<h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+            <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+        a matter of hours to help you.</p>
+
+            
+			
+			{{ form_start(form, { attr: { novalidate: 'novalidate' } }) }}
+				<p>
+					{{ form_label(form.firstname, 'Prénom:') }}
+					{{ form_widget(form.firstname,
+						{ attr:
+							{
+								placeholder: 'Saisissez votre prénom',
+								autofocus: 'autofocus'
+							}
+						}
+					) }}
+				</p>
+				<p>
+					{{ form_label(form.lastname, 'Nom:') }}
+					{{ form_widget(form.lastname) }}
+				</p>
+				<p>
+					{{ form_label(form.email, 'Email:') }}
+					{{ form_widget(form.email) }}
+				</p>
+				<p>
+					{{ form_label(form.message, 'Message:') }}
+					{{ form_widget(form.message) }}
+				</p>
+				<p>
+					<input type="submit" value="Valider" class="btn btn-primary">
+				</p>
+			{{ form_end(form) }}
+		</div>
+	</div>
+{%  endblock %}
+

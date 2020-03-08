@@ -1,0 +1,10 @@
+{#
+	afficher les messages flash
+	app.flashes : permet d'accéder aux messages flash stockés en session
+	notice est la clé du message flash
+#}
+{% for notice in app.flashes('notice') %}
+    <div class="text-center">
+	    <p class="alert alert-success">{{ notice }}</p>
+    </div>
+{% endfor %}
